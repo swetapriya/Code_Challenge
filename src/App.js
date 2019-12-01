@@ -1,26 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Home from './Components/home';
+import Search from './Components/search';
+import axios from 'axios';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    constructor(){
+        super();
+        this.state = {
+            data: []
+        };
+    }
+
+    componentDidMount(){
+        axios.get('http://localhost:3000/lessons')
+            .then(res => res.data)
+            .then( (data) => {
+                this.setState(
+                    {data}
+                )
+            }
+        );  
+    }
+
+    //arrow function for sort the courses by duration
+    onSortbyduration = () => { 
+        const {data} = this.state;
+        this.setState({
+            data : data.sort((a,b) => a.duration.localeCompare(b.duration))
+        })
+    }
+
+    //arrow function for sort the courses by publishDate
+    onSortbydate = () => {
+        const {data} = this.state;
+        this.setState({
+            data : data.sort((a,b) => a.publishDate.localeCompare(b.publishDate))
+        })
+    }
+
+    render() {
+        return ( 
+            <div className="App">
+                <Search data = {this.state.data}/>  
+                <Home
+                    data = {this.state.data} 
+                    sortByDuration= {this.onSortbyduration}
+                    sortByDate= {this.onSortbydate} 
+                />
+            </div>
+        );
+    }
 }
 
 export default App;

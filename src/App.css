@@ -20,3 +20,37 @@
 .App-link {
   color: #09d3ac;
 }
+
+li {
+  text-align: center;
+  padding: 5px 10px;
+  width: 100%;
+  max-width: 200px;
+  background-color: white;
+  border: 1px solid black;
+  list-style: none;
+}
+.listGroup{
+  display: inline-block;
+  position: relative;
+}
+.addButton {
+  display: none;
+}
+.listGroup:hover .addButton {
+  display: block;
+  position:absolute;
+  right: 0%;
+  top: 20%;
+}
+.showLogin {
+  display: block;
+  color: green;
+  font-weight: bold;
+
+}
+.cart {
+  border: none ;
+  background-color: greenyellow;
+
+}
