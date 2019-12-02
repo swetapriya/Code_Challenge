@@ -1,5 +1,5 @@
 import React from 'react';
-import {ListGroupItem} from "react-bootstrap";
+import {ListGroupItem, Button} from "react-bootstrap";
 
 function TaskItem(props){
     return (
@@ -7,9 +7,16 @@ function TaskItem(props){
             <ListGroupItem className = "listGroup"> 
                 {props.taskitem.name}
                 <span className = "addButton"> 
-                    <button onClick = {()=>props.handleShow(props.taskitem.name)}>
-                        Add
-                    </button>
+                    <Button 
+                        style = {{ "display" : (props.lesson.indexOf(props.taskitem.name) !== -1)? "none" : "block"}}
+                        onClick = {()=>props.handleShow(props.taskitem.name)}>
+                            Add
+                    </Button>
+                    <Button 
+                        style = {{ "display" : (props.lesson.indexOf(props.taskitem.name) !== -1)? "block" : "none"}}
+                        onClick = {()=>props.removeItem(props.taskitem.name)}>
+                            Remove
+                    </Button>
                 </span>
             </ListGroupItem>
         </div>

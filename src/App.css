@@ -33,6 +33,7 @@ li {
 .listGroup{
   display: inline-block;
   position: relative;
+  text-align: left;
 }
 .addButton {
   display: none;
@@ -40,7 +41,7 @@ li {
 .listGroup:hover .addButton {
   display: block;
   position:absolute;
-  right: 10%;
+  right: 0%;
   top: 20%;
 }
 .showLogin {
@@ -73,11 +74,6 @@ li {
   width: 100%;
   border: none;
 }
-/* .sidebar {
-  left: 0;
-  width: 50%;
-  height: 100vh;
-} */
 .container-border {
   border: 1px solid #D6D9DC;
 }

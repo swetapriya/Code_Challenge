@@ -18,10 +18,20 @@ class Home extends Component {
         if (!this.state.login){
             this.setState({show:true});
         }
-        if (this.state.lesson.indexOf(lesson) === -1){
+        if (this.state.login && this.state.lesson.indexOf(lesson) === -1){
             this.setState({
                 lesson:[...this.state.lesson,lesson]
             })
+        }
+    }
+
+    // To remove the item from cart
+    removeItem = (lesson) => {
+        var arr = this.state.lesson;
+        var index = arr.indexOf(lesson);
+        if (index !== -1){
+            arr.splice(index,1);
+            this.setState({lesson:arr})
         }
     }
 
@@ -39,7 +49,7 @@ class Home extends Component {
     }
     
     render(){
-        const taskListItems = this.props.data.map((data,index) => <TaskItem key = {index} taskitem = {data} handleShow ={this.handleShow} />)
+        const taskListItems = this.props.data.map((data,index) => <TaskItem key = {index} taskitem = {data} removeItem= {this.removeItem} handleShow ={this.handleShow} lesson = {this.state.lesson}/>)
         return(
             <div>
                 <Container> 
