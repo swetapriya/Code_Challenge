@@ -1,21 +1,24 @@
 import React from 'react';
-import {InputGroup, FormControl, Col, Row} from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 
 function SearchBar (props){
-    return (
-        <Row>
-            <Col sm={4}></Col>
-            <Col sm={4}>
-                <InputGroup >
-                    <FormControl
-                        placeholder="Search Lesson"
-                        aria-label="Search Lesson"
-                        aria-describedby="basic-addon2"
-                        onChange = {props.search}
-                    />
-                </InputGroup>
-            </Col>
-        </Row>
+    return ( 
+        <div className="search-container">
+            <Row>
+                <Col sm={4}></Col>
+                <Col sm={4}>
+                    <form onSubmit={props.handleSubmit}>
+                        <input
+                            type="text"
+                            name="lala"
+                            onChange={props.search}
+                            className='search'
+                            placeholder='Search'/>
+                    </form>
+                </Col>
+            </Row>
+        </div>
     )
 }
+
 export default SearchBar;

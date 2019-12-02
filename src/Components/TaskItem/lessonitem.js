@@ -2,7 +2,7 @@ import React from 'react';
 
 function LessonItem (props){
     return( 
-    <div>
+    <div className='sidebar container-border'>
         <ul>
             <li>
                 {props.lesson}

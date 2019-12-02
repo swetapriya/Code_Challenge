@@ -54,11 +54,11 @@ class Home extends Component {
                                 User Logged In
                             </span>
                             <br/>
-                            <Button variant="primary" size="sm" onClick = {this.props.sortByDuration}>
+                            <Button variant="info" size="sm" onClick = {this.props.sortByDuration}>
                                 Sort By Duration
                             </Button> &nbsp;
-                            <Button variant="primary" size="sm" onClick = {this.props.sortByDate}>
-                                Sort By PublishDate
+                            <Button variant="info" size="sm" onClick = {this.props.sortByDate}>
+                                Sort By Date
                             </Button>
                         </Col>
                         <Col sm={4}>

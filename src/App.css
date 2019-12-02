@@ -25,7 +25,7 @@ li {
   text-align: center;
   padding: 5px 10px;
   width: 100%;
-  max-width: 200px;
+  max-width: 266px;
   background-color: white;
   border: 1px solid black;
   list-style: none;
@@ -40,7 +40,7 @@ li {
 .listGroup:hover .addButton {
   display: block;
   position:absolute;
-  right: 0%;
+  right: 10%;
   top: 20%;
 }
 .showLogin {
@@ -51,6 +51,33 @@ li {
 }
 .cart {
   border: none ;
-  background-color: greenyellow;
-
+  background-color: #499C9A;
+}
+.search {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding: 0 15px;
+}
+.search-container {
+  background-color: #499C9A;
+  color: #ccc;
+  padding: 20px;
+  font-weight: normal;
+  line-height: 2;
+  text-transform: uppercase;
+  font-size: 90%;
+  width: 100%;
+  border: none;
+}
+/* .sidebar {
+  left: 0;
+  width: 50%;
+  height: 100vh;
+} */
+.container-border {
+  border: 1px solid #D6D9DC;
 }
