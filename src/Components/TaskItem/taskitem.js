@@ -13,6 +13,7 @@ function TaskItem(props){
                             Add
                     </Button>
                     <Button 
+                        variant="danger" 
                         style = {{ "display" : (props.lesson.indexOf(props.taskitem.name) !== -1)? "block" : "none"}}
                         onClick = {()=>props.removeItem(props.taskitem.name)}>
                             Remove
