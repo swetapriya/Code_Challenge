@@ -13,7 +13,7 @@ class App extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:3000/lessons')
+        axios.get('http://localhost:8000/lessons')
             .then(res => res.data)
             .then( (data) => {
                 this.setState(
